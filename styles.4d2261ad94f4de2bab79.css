@@ -1,4 +1,4 @@
-@charset "UTF-8";@keyframes gradientBG{0%{background-position:0 50%}50%{background-position:100% 50%}to{background-position:0 50%}}body{height:100vh;font-family:Segoe UI,sans-serif;background:linear-gradient(270deg,#ff6ec4,#7873f5,#42f5e6,#f5e642,#ff6ec4);background-size:1000% 1000%;animation:gradientBG 15s ease infinite}
+@charset "UTF-8";@keyframes gradientBG{0%{background-position:0 50%}50%{background-position:100% 50%}to{background-position:0 50%}}body{height:100vh;font-family:Segoe UI,sans-serif;background:linear-gradient(270deg,#ff6ec4,#7873f5,#42f5e6,#f5e642,#ff6ec4);background-size:1000% 1000%;animation:gradientBG 15s ease infinite;padding-top:80px}
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
