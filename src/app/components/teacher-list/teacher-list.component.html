@@ -1,0 +1,50 @@
+<div class="table-container">
+    <table class="table table-hover table-modern">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cv</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Tel</th>
+                <th>Address</th>
+                <th>Valide</th>
+                <th>Cours</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of usersTab">
+                <td>{{user._id}}</td>
+                <td>
+                    <button class="btn btn-cv" (click)="viewCv(user.cv)">
+                        <i class="fas fa-id-card"></i> View CV
+                    </button>
+                </td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.tel}}</td>
+                <td>{{user.adr}}</td>
+                <td><span style="color:red; font-weight: bold;"
+                        *ngIf="user.valide=='non valide'">{{user.valide}}</span><span
+                        style="color:green; font-weight: bold;" *ngIf="user.valide=='valide'">{{user.valide}}</span>
+                </td>
+
+                <td>
+                    <button class="btn-courses" (click)="goToCoursesList(user._id)">
+                        <i class="fas fa-book"></i>
+                        Courses List
+                    </button>
+                </td>
+                <td class="actions-column">
+                    <button *ngIf="user.role=='teacher' && user.valide=='non valide'" class="btn btn-validate" (click)="valideTeacher(user._id)"><i
+                            class="bi bi-check2-circle"></i></button>
+                    <button class="btn btn-edit" (click)="goToEdit(user._id)"><i class="bi bi-pencil-fill"></i></button>
+                    <button class="btn btn-delete" (click)="deleteTeacher(user._id)"><i class="bi bi-trash-fill"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

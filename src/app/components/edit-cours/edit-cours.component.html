@@ -1,0 +1,50 @@
+<app-banner title="Edit Course"></app-banner>
+
+<div class="container mt-4">
+  <form #editCoursForm="ngForm" (ngSubmit)="editCours()" class="p-4 shadow rounded bg-white">
+    <h2 class="text-center mb-4" style="text-decoration: underline green;">Edit Course</h2>
+
+    <!-- Course Name -->
+    <div class="col-md-12 position-relative">
+      <i class="bi bi-book input-icon"></i>
+      <input type="text" placeholder="{{cours.name}}" class="form-control with-icon" name="nameEdit" [(ngModel)]="cours.name">
+    </div>
+
+    <!-- Description -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-card-text input-icon"></i>
+      <textarea placeholder="{{cours.description}}" class="form-control with-icon" name="descriptionEdit" [(ngModel)]="cours.description"></textarea>
+    </div>
+
+    <!-- Coefficient -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-calculator input-icon"></i>
+      <input type="number" placeholder="{{cours.coeff}}" class="form-control with-icon" name="coeffEdit" [(ngModel)]="cours.coeff">
+    </div>
+
+    <!-- Duration -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-clock input-icon"></i>
+      <input type="text" placeholder="{{cours.duration}}" class="form-control with-icon" name="durationEdit" [(ngModel)]="cours.duration">
+    </div>
+
+    <!-- Teacher Selection -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-person-badge input-icon"></i>
+      <select class="form-control" name="teacherEdit" [(ngModel)]="cours.teacher">
+        <option *ngFor="let t of teachers" [value]="t._id">
+          {{t.firstName}} {{t.lastName}}
+        </option>
+      </select>
+    </div>
+
+    <span style="color: red;">{{errorMsg}}</span>
+
+    <!-- Submit -->
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-signup">
+        <i class="bi bi-pencil-square"></i> Edit
+      </button>
+    </div>
+  </form>
+</div>

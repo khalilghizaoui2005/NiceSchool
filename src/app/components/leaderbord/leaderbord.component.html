@@ -1,0 +1,29 @@
+<div class="leaderboard-modern">
+  <h2 class="leaderboard-title">🏆 Top Students</h2>
+
+  <ul class="leaderboard-list">
+    <li *ngFor="let student of students; let i = index" 
+        [ngClass]="{
+          'current': student._id === currentStudentId
+        }">
+
+      <div class="student-rank">
+        <span class="rank-badge" [ngClass]="{'gold': i===0,'silver': i===1,'bronze': i===2}">
+          <ng-container *ngIf="i===0">🥇</ng-container>
+          <ng-container *ngIf="i===1">🥈</ng-container>
+          <ng-container *ngIf="i===2">🥉</ng-container>
+          <ng-container *ngIf="i>2">{{i+1}}</ng-container>
+        </span>
+      </div>
+
+      <div class="student-info">
+        <strong>{{student.firstName}} {{student.lastName}}</strong>
+        <span class="classe">({{student.classeId.name}})</span>
+      </div>
+
+      <div class="student-note">
+        {{student.moyenne}}/20
+      </div>
+    </li>
+  </ul>
+</div>

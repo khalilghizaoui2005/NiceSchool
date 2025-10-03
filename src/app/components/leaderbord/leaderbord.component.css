@@ -1,0 +1,90 @@
+.leaderboard-modern {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: #fff;
+  padding: 25px;
+  border-radius: 25px;
+  max-width: 600px;
+  margin: 30px auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  font-family: 'Poppins', sans-serif;
+}
+
+.leaderboard-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboard-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.leaderboard-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.student-rank {
+  flex-shrink: 0;
+}
+
+.rank-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.rank-badge.gold { background: linear-gradient(135deg, #ffd700, #fbbf24); color:#000; }
+.rank-badge.silver { background: linear-gradient(135deg, #cfd8dc, #90a4ae); color:#000; }
+.rank-badge.bronze { background: linear-gradient(135deg, #ffb74d, #f57c00); color:#000; }
+
+.student-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.student-info strong {
+  font-size: 1.1rem;
+}
+
+.student-info .classe {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-left: 6px;
+}
+
+.student-note {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Highlight current student */
+.leaderboard-list li.current {
+  border: 2px solid #10b981;
+  background: rgba(16,185,129,0.15);
+  font-weight: bold;
+}

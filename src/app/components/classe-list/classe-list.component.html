@@ -1,0 +1,35 @@
+<app-banner title="Classe"></app-banner>
+
+<table class="table table-hover table-modern">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Level</th>
+            <th>students</th>
+            <th>Actiion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let classe of classeTab">
+            <td>{{classe._id}}</td>
+            <td>{{classe.name}}</td>
+            <td>{{classe.level}}</td>
+            <td>
+                <button class="btn-student-small" (click)="goToStudentList(classe._id)">
+                    <i class="fas fa-user-graduate"></i>
+                    Student List
+                </button>
+            </td>
+            <td class="text-center actions-column">
+                <button class="btn btn-edit" title="Edit">
+                    <i class="bi bi-pencil-fill"></i> <!-- Bootstrap Icon -->
+                </button>
+                <button class="btn btn-delete" title="Delete" (click)="deleteClasse(classe._id)">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

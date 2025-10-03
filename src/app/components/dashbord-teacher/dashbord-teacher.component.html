@@ -1,0 +1,34 @@
+<app-banner title="Dashbord Teacher"></app-banner>
+
+<main class="main">
+    <section id="dashboard-section" class="section py-5">
+        <div class="container">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs justify-content-center custom-tabs mb-4" id="dashboardTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="users-tab" data-bs-toggle="tab" data-bs-target="#users"
+                        type="button" role="tab">Cours</button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="dashboardTabsContent" style="width: 100%;">
+                <!-- Users Tab -->
+                <div class="tab-pane fade show active" id="users" role="tabpanel" style="width: 100%;">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-12 mx-auto"> <!-- كامل العرض -->
+                            <div class="card shadow-modern" style="max-width: 100%; margin: auto;">
+                                <div class="card-header">Cours</div>
+                                <div class="table-container">
+                                    <app-cours-table></app-cours-table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- tab-content -->
+        </div>
+    </section>
+</main>

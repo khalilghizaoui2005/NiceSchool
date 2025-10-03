@@ -1,0 +1,39 @@
+<app-banner title="addTask"></app-banner>
+<div class="tasks-card">
+  <h3>📋 Tasks</h3>
+
+  <div class="filter">
+    <label>Filter: </label>
+    <select [(ngModel)]="filter" class="filter-select">
+      <option value="all">All</option>
+      <option value="todo">To Do</option>
+      <option value="in-progress">In Progress</option>
+      <option value="done">Done</option>
+    </select>
+  </div>
+
+  <div class="table-container">
+    <table class="tasks-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Created At</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of filteredTasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.createdAt | date:'short' }}</td>
+          <td>
+            <button *ngIf="task.status !== 'done'" class="mark-done-btn" (click)="markAsDone(task)">
+              Mark as Done
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,198 @@
+.student-dashboard {
+  padding: 30px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c6e49;
+}
+
+/* ================================
+   Moyenne Card
+================================= */
+.moyenne-box {
+  max-width: 350px;
+  margin: 0 auto 40px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.moyenne-box:hover {
+  transform: translateY(-5px);
+}
+
+.moyenne-box h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c6e49;
+  margin-bottom: 12px;
+}
+
+.moyenne-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.moyenne-emoji {
+  font-size: 1.6rem;
+  margin-left: 8px;
+}
+
+.moyenne-progress {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.moyenne-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.moyenne-fill.low {
+  background: linear-gradient(90deg, #ff5252, #ff867f);
+}
+
+.moyenne-fill.medium {
+  background: linear-gradient(90deg, #ffb74d, #ff9800);
+}
+
+.moyenne-fill.high {
+  background: linear-gradient(90deg, #66bb6a, #43a047);
+}
+
+/* ================================
+   Course Cards
+================================= */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.course-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.course-duration {
+  font-size: 0.9rem;
+  background: #c8f0d9;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #1b4d34;
+}
+
+.course-desc {
+  margin: 10px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.course-info {
+  margin: 12px 0;
+  font-size: 0.95rem;
+  color: #2c6e49;
+  line-height: 1.5;
+}
+
+.course-eval {
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 12px;
+  background: #f9fff7;
+  border: 1px dashed #a0e6b1;
+}
+
+.eval-label {
+  font-weight: 600;
+  color: #1b4d34;
+}
+
+.eval-text {
+  margin-top: 5px;
+  font-style: italic;
+  color: #444;
+}
+
+/* Progress Section */
+.course-progress {
+  margin-top: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.progress-fill.low {
+  background: linear-gradient(90deg, #ff5252, #ff867f);
+}
+
+.progress-fill.medium {
+  background: linear-gradient(90deg, #ffb74d, #ff9800);
+}
+
+.progress-fill.high {
+  background: linear-gradient(90deg, #66bb6a, #43a047);
+}
+
+.note-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.note-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c6e49;
+}
+
+.note-emoji {
+  font-size: 1.8rem;
+}

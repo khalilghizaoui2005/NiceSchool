@@ -1,0 +1,47 @@
+<app-banner title="Classe" *ngIf="!is"></app-banner>
+
+<table class="table table-hover table-modern">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Level</th>
+            <th>Students</th>
+            <th *ngIf="is">Courses</th>
+            <th>Actiion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let classe of classeTab">
+            <td>{{classe._id}}</td>
+            <td>{{classe.name}}</td>
+            <td>{{classe.level}}</td>
+            <td>
+                <button class="btn-student-small" *ngIf="is" (click)="goToStudentList(classe._id)">
+                    <i class="fas fa-user-graduate"></i>
+                    Student List
+                </button>
+                <button class="btn-student-small" *ngIf="is==false" (click)="goToStudentListT(classe._id)">
+                    <i class="fas fa-user-graduate"></i>
+                    Student List
+                </button>
+            </td>
+            <td *ngIf="is">
+                <button class="btn-courses" (click)="goToCoursesList(classe.classeCoursId)">
+                    <i class="fas fa-book"></i>
+                    Courses List
+                </button>
+
+            </td>
+            <td class="text-center actions-column">
+                <button class="btn btn-edit" title="Edit" (click)="goToEditClasse(classe._id)">
+                    <i class="bi bi-pencil-fill"></i> <!-- Bootstrap Icon -->
+                </button>
+                <button class="btn btn-delete" title="Delete" (click)="deleteClasse(classe._id)">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

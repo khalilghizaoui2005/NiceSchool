@@ -1,0 +1,23 @@
+<table class="table table-hover table-modern">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Teacher Id</th>
+            <th>Teacher Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cours of coursTab">
+            <td>{{cours._id}}</td>
+            <td>{{cours.name}}</td>
+            <td>{{cours.description}}</td>
+            <td>{{cours.duration}}</td>
+            <td>{{cours.teacher._id}}</td>
+            <td>{{cours.teacher.firstName}} {{cours.teacher.lastName}}</td>
+
+        </tr>
+    </tbody>
+</table>

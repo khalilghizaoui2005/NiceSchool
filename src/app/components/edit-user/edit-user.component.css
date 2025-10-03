@@ -1,0 +1,27 @@
+/* Input مع أيقونة */
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+
+.with-icon {
+  padding-left: 35px;
+}
+
+/* زر Signup متدرج */
+.btn-signup {
+  background: linear-gradient(45deg, #007bff, #00c851);
+  border: none;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.btn-signup:hover {
+  background: linear-gradient(45deg, #00c851, #007bff);
+  transform: scale(1.05);
+}

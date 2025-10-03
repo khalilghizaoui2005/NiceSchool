@@ -1,0 +1,95 @@
+<div class="page-title">
+    <h1>Add Classe</h1>
+    <nav class="breadcrumbs">
+        <ol>
+            <li><a routerLink="">Home</a></li>
+            <li class="current">Add Classe</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container mt-4">
+    <form [formGroup]="classeForm" (ngSubmit)="onSubmit()" class="bg-white shadow p-4 rounded">
+        <h2 class="text-center mb-4 text-success">Add New Classe</h2>
+
+        <!-- Class Name -->
+        <div class="mt-3 position-relative">
+            <i class="bi bi-journal-bookmark input-icon"></i>
+            <input type="text" formControlName="name" placeholder="Class Name" class="form-control with-icon">
+        </div>
+
+        <!-- Level -->
+        <div class="mt-3 position-relative">
+            <i class="bi bi-building input-icon"></i>
+            <select formControlName="level" class="form-control with-icon">
+                <option value="" disabled>Select Level</option>
+                <option value="primary">Primary</option>
+                <option value="middle">Middle</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+
+
+
+        <!-- Select Students -->
+        <div class="mt-3">
+            <label><i class="bi bi-people"></i> Select Students</label>
+            <div class="multi-select-container">
+                <div class="selected-items" (click)="toggleStudentDropdown()">
+                    <span *ngIf="selectedStudents.length === 0">Select Students</span>
+                    <span *ngFor="let s of selectedStudents" class="badge bg-success me-1">
+                        {{ getStudentName(s) }}
+                    </span>
+                    <i class="bi bi-caret-down-fill dropdown-icon"></i>
+                </div>
+
+                <div class="dropdown-list" *ngIf="studentDropdownOpen">
+                    <!-- Search box -->
+                    <input type="text" placeholder="Search students..." class="form-control search-box"
+                        (input)="onSearchStudents($event)">
+
+                    <!-- List -->
+                    <div class="dropdown-item" *ngFor="let s of filteredStudents">
+                        <input type="checkbox" [checked]="selectedStudents.includes(s._id)"
+                            (change)="onSelectStudent(s._id)">
+                        {{ s.firstName }} {{ s.lastName }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Select Courses -->
+        <div class="mt-3">
+            <label><i class="bi bi-journal"></i> Select Courses</label>
+            <div class="multi-select-container">
+                <div class="selected-items" (click)="toggleDropdownCourses()">
+                    <span *ngIf="selectedCourses.length === 0">Select Courses</span>
+                    <span *ngFor="let c of selectedCourses" class="badge bg-primary me-1">
+                        {{ getCourseName(c) }}
+                    </span>
+                    <i class="bi bi-caret-down-fill dropdown-icon"></i>
+                </div>
+
+                <div class="dropdown-list" *ngIf="dropdownOpenCourses">
+                    <input type="text" placeholder="Search..." class="form-control search-box"
+                        (input)="onSearchCourses($event)">
+                    <div class="dropdown-item" *ngFor="let c of filteredCourses">
+                        <input type="checkbox" [checked]="selectedCourses.includes(c._id)"
+                            (change)="onSelectCourse(c._id)">
+                        {{ c.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="add">
+            <span style="color: green;"><i class="fas fa-check-circle"></i> Classe added successfully!</span>
+        </div>
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> Add Classe
+            </button>
+        </div>
+    </form>
+</div>

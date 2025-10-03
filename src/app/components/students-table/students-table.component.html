@@ -1,0 +1,30 @@
+<app-banner title="student"></app-banner>
+<div class="cards-grid container mt-4">
+  <div class="user-card" *ngFor="let user of usersTab">
+    <div class="card-header">
+      {{ user.firstName }} {{ user.lastName }}
+    </div>
+    <div class="card-body">
+      <img [src]="'http://localhost:3000/images/' + user.photo" alt="User photo" class="user-photo">
+
+      <ul class="user-info">
+        <li><strong>Email:</strong> {{ user.email }}</li>
+        <li><strong>Phone:</strong> {{ user.tel }}</li>
+        <li><strong>Address:</strong> {{ user.adr }}</li>
+        <li><strong>Classe:</strong> {{ user.classeId.name }}</li>
+      </ul>
+
+      <div class="card-actions">
+        <button class="btn btn-note" (click)="goToAddNote(user._id)">
+          <i class="fas fa-sticky-note"></i> Add Note
+        </button>
+        <button class="btn btn-edit" (click)="goToEdit(user._id)">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+        <button class="btn btn-delete" (click)="deleteStudent(user._id)">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

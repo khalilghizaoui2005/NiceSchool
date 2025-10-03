@@ -1,0 +1,39 @@
+<form [formGroup]="addNoteForm" class="evaluation-card">
+
+  <!-- اسم الكورس -->
+  <h2 class="cours-title"><i class="bi bi-journal-bookmark"></i> {{ nameCours }}</h2>
+
+  <!-- معلومات التلميذ -->
+  <div class="student-info">
+    <img [src]="'http://localhost:3000/images/' + student.photo" class="student-photo" alt="student photo">
+    <div>
+      <h3>{{ student.firstName }} {{ student.lastName }}</h3>
+      <p>Classe: {{ student.classeId?.name }}</p>
+    </div>
+  </div>
+
+  <!-- إدخال النوتة + إيموجي -->
+  <div class="note-section">
+    <label>Note (0 - 20)</label>
+    <div class="note-input">
+      <input type="number" formControlName="note" min="0" max="20"
+             [class.invalid]="addNoteForm.get('note')?.invalid && addNoteForm.get('note')?.touched"
+             [class.valid]="addNoteForm.get('note')?.valid && addNoteForm.get('note')?.touched">
+      <span class="note-emoji" [ngStyle]="{'color': noteColor}">{{ noteEmoji }}</span>
+    </div>
+  </div>
+
+  <!-- Evaluation / الملاحظات -->
+  <div class="evaluation-notes">
+    <label><i class="bi bi-chat-text"></i> Remarques</label>
+    <textarea formControlName="eval" placeholder="Écrivez vos remarques ici..."
+              [class.invalid]="addNoteForm.get('eval')?.invalid && addNoteForm.get('eval')?.touched"
+              [class.valid]="addNoteForm.get('eval')?.valid && addNoteForm.get('eval')?.touched"></textarea>
+  </div>
+
+  <!-- زر الحفظ -->
+  <button class="btn-save-note" type="button" (click)="saveNote(student.classeId)">
+    <i class="bi bi-check2-circle"></i> Save Note
+  </button>
+
+</form>

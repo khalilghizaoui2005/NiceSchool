@@ -1,0 +1,27 @@
+<app-banner title="Login"></app-banner>
+
+<div class="container mt-4">
+  <form #loginForm="ngForm" (ngSubmit)="login()">
+    <h2>Login</h2>
+
+    <div class="mt-3 position-relative">
+      <i class="bi bi-telephone input-icon"></i>
+      <input type="tel" placeholder="Phone Number" name="telLogin" [(ngModel)]="user.tel" class="form-control with-icon">
+    </div>
+
+    <div class="mt-3 position-relative">
+      <i class="bi bi-lock input-icon"></i>
+      <input type="password" placeholder="Password" name="passLogin" [(ngModel)]="user.pass" class="form-control with-icon">
+    </div>
+
+    <small class="text-danger" *ngIf="errormsg">
+      <i class="bi bi-exclamation-circle"></i> {{errormsg}}
+    </small>
+
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-login">
+        <i class="bi bi-person-plus"></i> Login
+      </button>
+    </div>
+  </form>
+</div>

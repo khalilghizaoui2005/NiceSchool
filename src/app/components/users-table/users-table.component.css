@@ -1,0 +1,103 @@
+.table-container {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.table-modern {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #2c6e49;
+  table-layout: auto;
+}
+
+.table-modern th {
+  background: linear-gradient(120deg, #c8f0d9, #a0e6b1);
+  color: #1b4d34;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 12px 15px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.table-modern td {
+  background: #f0fff4;
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.table-modern tbody tr:hover td {
+  transform: translateY(-3px) rotateX(0.5deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background: #e0f5dc;
+}
+
+.table-modern tbody tr:nth-child(even) td {
+  background: #e6fff0;
+}
+
+/* عمود الأزرار */
+.actions-column {
+  min-width: 160px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin: 0 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn i { margin-right: 4px; font-size: 0.95rem; }
+
+.btn-edit { background: linear-gradient(135deg, #42a5f5, #90caf9); color: white; }
+.btn-edit:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+
+.btn-validate { background: linear-gradient(135deg, #2e7d32, #81c784); color: white; }
+.btn-validate:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+
+.btn-delete { background: linear-gradient(135deg, #d32f2f, #ef9a9a); color: white; }
+.btn-delete:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+
+.btn-cv {
+  background: linear-gradient(135deg, #00bfa6, #00e676);
+  color: white;
+  padding: 4px 10px;
+}
+.btn-cv:hover {
+  background: linear-gradient(135deg, #00e5ff, #1de9b6);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* User photo */
+.user-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #a0e6b1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.user-photo:hover { transform: scale(1.1) rotate(3deg); }

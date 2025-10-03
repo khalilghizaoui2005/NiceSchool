@@ -1,0 +1,210 @@
+/* البطاقة */
+.card.shadow-modern {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+    background: #f9fff7;
+    position: relative;
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card.shadow-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* ترويسة البطاقة */
+.card-header {
+    background: linear-gradient(135deg, #2c6e49, #88c999);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px;
+    font-size: 1.2rem;
+    letter-spacing: 0.8px;
+    border-bottom: 3px solid #2c6e49;
+    border-radius: 12px 12px 0 0;
+}
+
+/* حاوية الجدول */
+.table-container {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+}
+
+/* الجدول */
+.table-modern {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #2c6e49;
+    table-layout: auto;
+}
+
+/* رؤوس الأعمدة */
+.table-modern th {
+    background: linear-gradient(120deg, #c8f0d9, #a0e6b1);
+    color: #1b4d34;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    padding: 6px 8px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    white-space: nowrap;
+}
+
+/* خلايا الجدول */
+.table-modern td {
+    background: #f0fff4;
+    border-radius: 6px;
+    padding: 6px 8px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Hover على الصفوف */
+.table-modern tbody tr:hover td {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    background: #e0f5dc;
+}
+
+/* تمييز الصفوف بالتناوب */
+.table-modern tbody tr:nth-child(even) td {
+    background: #e6fff0;
+}
+
+/* عمود الأزرار */
+.actions-column {
+    min-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* الأزرار */
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: 4px 8px;
+    margin: 0 2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn i {
+    margin-right: 4px;
+    font-size: 0.85rem;
+}
+
+/* زر Edit */
+.btn-edit {
+    background: linear-gradient(135deg, #42a5f5, #90caf9);
+    color: white;
+}
+.btn-edit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* زر Validate */
+.btn-validate {
+    background: linear-gradient(135deg, #2e7d32, #81c784);
+    color: white;
+}
+.btn-validate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* زر Delete */
+.btn-delete {
+    background: linear-gradient(135deg, #d32f2f, #ef9a9a);
+    color: white;
+}
+.btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* زر CV */
+.btn-cv {
+    background: linear-gradient(135deg, #00bfa6, #00e676);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+.btn-cv:hover {
+    background: linear-gradient(135deg, #00e5ff, #1de9b6);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* User photo */
+.user-photo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #a0e6b1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.user-photo:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* زر قائمة الكورسات */
+.btn-courses {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37,117,252,0.3);
+}
+.btn-courses i {
+    font-size: 0.9rem;
+}
+.btn-courses:hover {
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    box-shadow: 0 5px 18px rgba(74,0,224,0.35);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .table-modern th, .table-modern td {
+        padding: 4px 6px;
+        font-size: 0.7rem;
+    }
+    .btn {
+        padding: 3px 6px;
+        font-size: 0.7rem;
+    }
+    .btn-courses {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+}

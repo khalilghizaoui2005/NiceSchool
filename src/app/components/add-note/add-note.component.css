@@ -1,0 +1,139 @@
+/* ----------------- خلفية الصفحة ----------------- */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #ff6a88, #ffb88c);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ----------------- بطاقة التقييم ----------------- */
+.evaluation-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.evaluation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 50px rgba(0,0,0,0.25);
+}
+
+/* عنوان الكورس */
+.cours-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* معلومات التلميذ */
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 16px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.student-photo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3498db;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* قسم النوتة */
+.note-section {
+  margin: 20px 0;
+}
+.note-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.note-input input {
+  width: 90px;
+  padding: 8px;
+  text-align: center;
+  border: 2px solid #3498db;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.note-input input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(52,152,219,0.5);
+}
+.note-emoji {
+  font-size: 2.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Evaluation */
+.evaluation-notes textarea {
+  width: 100%;
+  min-height: 110px;
+  border-radius: 15px;
+  border: 2px solid #3498db;
+  padding: 12px;
+  font-size: 1rem;
+  margin-top: 12px;
+  resize: vertical;
+  transition: all 0.3s ease;
+}
+.evaluation-notes textarea:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 4px 12px rgba(26,188,156,0.3);
+}
+
+/* زر الحفظ */
+.btn-save-note {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #ff6a88, #ffb88c);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease, box-shadow 0.3s;
+}
+.btn-save-note:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255,106,136,0.35);
+}
+
+/* ألوان الحقول بناءً على الصحة */
+.note-input input.invalid,
+.evaluation-notes textarea.invalid {
+  border-color: #e74c3c;
+  box-shadow: 0 0 8px rgba(231,76,60,0.5);
+}
+.note-input input.valid,
+.evaluation-notes textarea.valid {
+  border-color: #2ecc71;
+  box-shadow: 0 0 8px rgba(46,204,113,0.5);
+}

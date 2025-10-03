@@ -1,0 +1,40 @@
+<header id="header" class="header fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a routerLink="/" class="logo d-flex align-items-center">
+      <i class="bi bi-buildings logo-icon"></i>
+      <h1 class="sitename">NiceSchool</h1>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navmenu" class="navmenu d-flex align-items-center">
+      <ul class="d-flex align-items-center mb-0">
+        <li><a routerLink="" routerLinkActive="active" *ngIf="isParent">Home</a></li>
+        <li><a routerLink="dashbordStudent" routerLinkActive="active" *ngIf="isStudent">Dashboard Student</a></li>
+        <li><a routerLink="dashbordTeacher" routerLinkActive="active" *ngIf="isTeacher">Dashboard Teacher</a></li>
+        <li><a routerLink="dashbordAdmin" routerLinkActive="active" *ngIf="isAdmin">Dashboard Admin</a></li>
+        <li><a routerLink="addCours" *ngIf="isAdmin">Add Cours</a></li>
+        <li><a routerLink="addClasse" *ngIf="isAdmin">Add Classe</a></li>
+        <li><a routerLink="signupStudent" *ngIf="isNotCon">Signup</a></li>
+        <li><a routerLink="login" *ngIf="isNotCon">Login</a></li>
+        <!-- N -->  
+
+
+
+
+
+        <li><a (click)="goToEdit()" *ngIf="!isNotCon">
+            <span *ngIf="user.role=='student'">
+              <img [src]="'http://localhost:3000/images/' + user.photo" alt="User photo"
+                class="user-photo rounded-circle">
+            </span>
+            HI ! {{user.fName}} {{user.lName}}
+          </a></li>
+        <li><a (click)="logout()" class="logout-btn" *ngIf="!isNotCon">LogOut</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+  </div>
+</header>

@@ -1,0 +1,14 @@
+<app-banner title="Notifications"></app-banner>
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Your Notifications</h2>
+
+  <div class="row">
+    <div class="col-md-6 mb-3" *ngFor="let notif of notifications">
+      <div class="card shadow p-3">
+        <h5>{{notif.title}}</h5>
+        <p>{{notif.message}}</p>
+        <small class="text-muted">{{notif.createdAt | date:'short'}}</small>
+      </div>
+    </div>
+  </div>
+</div>

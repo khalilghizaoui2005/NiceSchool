@@ -1,0 +1,70 @@
+<app-banner title="✨ Dashbord"></app-banner>
+
+<main class="main">
+    <section id="dashboard-section" class="section py-5">
+        <div class="container">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs justify-content-center custom-tabs mb-4" id="dashboardTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="users-tab" data-bs-toggle="tab" data-bs-target="#users"
+                        type="button" role="tab">Evaluation</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="leader-tab" data-bs-toggle="tab" data-bs-target="#leader" type="button"
+                        role="tab">leaderboard</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="cours-tab" data-bs-toggle="tab" data-bs-target="#cours" type="button"
+                        role="tab">Cours Student</button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="dashboardTabsContent" style="width: 100%;">
+                <!-- Users Tab -->
+                <div class="tab-pane fade show active" id="users" role="tabpanel" style="width: 100%;">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-12 mx-auto">
+                            <div class="card shadow-modern" style="max-width: 100%; margin: auto;">
+                                <div class="card-header">Evaluation</div>
+                                <div class="table-container">
+                                    <app-cours-student></app-cours-student>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- LeaderBorad Tab -->
+                <div class="tab-pane fade show" id="leader" role="tabpanel" style="width: 100%;">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-12 mx-auto"> <!-- كامل العرض -->
+                            <div class="card shadow-modern" style="max-width: 100%; margin: auto;">
+                                <div class="card-header">leaderboard</div>
+                                <div class="table-container">
+                                    <app-leaderbord></app-leaderbord>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- LeaderBorad Tab -->
+                <div class="tab-pane fade show" id="cours" role="tabpanel" style="width: 100%;">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-12 mx-auto">
+                            <div class="card shadow-modern" style="max-width: 100%; margin: auto;">
+                                <div class="card-header">Cours Student</div>
+                                <div class="table-container">
+                                   <app-cours-table-student></app-cours-table-student>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>

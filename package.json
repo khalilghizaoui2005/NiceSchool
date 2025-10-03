@@ -1,0 +1,91 @@
+{
+<<<<<<< HEAD
+  "name": "ecole",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+=======
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "description": "Backend for TodoApp compatible with Node 14",
+  "main": "serveur.js",
+  "scripts": {
+    "start": "node serveur.js",
+    "dev": "nodemon serveur.js"
+  },
+>>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c
+  "dependencies": {
+    "@angular/animations": "^12.2.17",
+    "@angular/common": "^12.2.17",
+    "@angular/compiler": "^12.2.17",
+<<<<<<< HEAD
+=======
+    "@angular/compiler-cli": "^12.2.17",
+>>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c
+    "@angular/core": "^12.2.17",
+    "@angular/forms": "^12.2.17",
+    "@angular/platform-browser": "^12.2.17",
+    "@angular/platform-browser-dynamic": "^12.2.17",
+    "@angular/router": "^12.2.17",
+<<<<<<< HEAD
+    "aos": "^2.3.4",
+    "axios": "^1.11.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.3",
+    "bson": "^1.1.6",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-session": "^1.17.3",
+    "glightbox": "^3.3.1",
+    "isotope-layout": "^3.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^4.0.0",
+    "mongodb": "^3.6.10",
+    "mongoose": "^5.13.23",
+    "multer": "^2.0.2",
+    "sweetalert2": "^11.23.0",
+    "swiper": "^11.2.10",
+    "zone.js": "^0.11.4"
+=======
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.23",
+    "rxjs": "^6.6.7",
+    "tslib": "^2.8.1",
+    "zone.js": "^0.11.8"
+>>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^12.2.18",
+    "@angular/cli": "^12.2.18",
+<<<<<<< HEAD
+    "@angular/compiler-cli": "^12.2.17",
+    "@types/jasmine": "~4.0.0",
+    "@types/node": "^14.18.63",
+    "jasmine-core": "~4.3.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "rxjs": "^6.6.7",
+    "tslib": "^2.8.1",
+    "typescript": "^4.3.5"
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.",
+  "main": "karma.conf.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+=======
+    "nodemon": "^2.0.22",
+    "typescript": "^4.3.5"
+  }
+>>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c
+}

@@ -1,0 +1,185 @@
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f7f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #2d7a2d, #4caf50);
+    color: white;
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    clip-path: ellipse(100% 85% at 50% 0%);
+  }
+
+  .hero h1 {
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  /* Section Titles */
+  .section-title h2 {
+    color: #2d7a2d;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title p {
+    color: #555;
+  }
+
+  /* Cards Modern Style */
+  .card-modern {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+
+  .card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Buttons */
+  .btn-modern {
+    background: linear-gradient(135deg, #2d7a2d, #4caf50);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .btn-modern:hover {
+    background: linear-gradient(135deg, #1b4d1b, #3e8e3e);
+  }
+
+  /* Search Box */
+  .search-box {
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-box input {
+    border: none;
+    border-radius: 50px 0 0 50px;
+  }
+
+  .search-box button {
+    border-radius: 0 50px 50px 0;
+  }
+
+  /* Child Cards */
+  .child-card {
+    background: linear-gradient(to bottom right, #d0f0c0, #b3e6a0);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<body>
+
+  <main class="parent-home-main">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Parent Dashboard</h1>
+        <p>Track your child's courses, grades, and teacher evaluations easily</p>
+      </div>
+    </section>
+
+    <!-- All Courses and Teachers -->
+    <section class="all-courses-teachers section py-5">
+      <div class="container">
+        <div class="section-title text-center mb-5">
+          <h2>All Courses & Teachers</h2>
+          <p>Explore all courses and instructors available on the platform</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Course Card Example -->
+          <div class="col-md-6 col-lg-4" *ngFor="let cours of coursTab">
+            <div class="card card-modern h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{cours.name}}</h5>
+                <p><strong>Teacher:</strong> {{cours.teacher.firstName}} {{cours.teacher.lastName}}</p>
+                <p><strong>Duration:</strong> {{cours.duration}}</p>
+
+                <!-- زر العرض -->
+                <a href="javascript:void(0)" class="btn btn-modern w-100" *ngIf="!cours.showDetails"
+                  (click)="cours.showDetails = true">
+                  View Details
+                </a>
+
+                <!-- الوصف يظهر بعد الضغط -->
+                <div class="course-description mt-3" *ngIf="cours.showDetails">
+                  <p>{{cours.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeat for more courses dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Child Lookup Section -->
+    <section class="child-lookup section py-5 bg-light">
+      <div class="container">
+        <div class="section-title text-center mb-4">
+          <h2>Search Your Child</h2>
+          <p>Enter your child's phone number to view enrolled courses, grades, and evaluations</p>
+        </div>
+        <form #searchTelForm="ngForm" (ngSubmit)="searchChild(search.tel)">
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-6">
+              <div class="input-group search-box">
+                <input type="text" class="form-control" placeholder="Child's phone number" name="telChild"
+                  [(ngModel)]="search.tel" aria-label="Child Phone">
+
+                <button class="btn btn-modern">Search</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- Child Courses & Grades -->
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" *ngFor="let item of searchResults">
+            <div class="card card-modern child-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.firstName }} {{ item.lastName }}</h5>
+                <p><strong>Course:</strong> {{ item.coursName }}</p>
+                <p><strong>note:</strong> {{ item.note }}/20</p>
+                <p><strong>Teacher Evaluation:</strong> {{ item.eval }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,240 @@
+/* ===== Hero ===== */
+.page-title {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-blend-mode: overlay;
+}
+
+/* ===== Tabs ===== */
+.custom-tabs .nav-link {
+  border-radius: 50px;
+  border: 2px solid #2c6e49;
+  color: #2c6e49;
+  font-weight: 600;
+  padding: 0.7rem 2rem;
+  margin: 0 10px;
+  transition: all 0.4s ease;
+}
+
+.custom-tabs .nav-link.active,
+.custom-tabs .nav-link:hover {
+  background: linear-gradient(145deg, #2c6e49, #88c999);
+  color: white;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35), 0 6px 12px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+}
+
+/* ===== Card ===== */
+.card.shadow-modern {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  margin-bottom: 30px;
+  background: #f9fff7;
+  width: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card.shadow-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* ===== Card Header ===== */
+.card-header {
+  background: linear-gradient(135deg, #2c6e49, #88c999);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  padding: 18px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  border-bottom: 4px solid #2c6e49;
+  border-radius: 12px 12px 0 0;
+}
+
+/* ===== Table Container ===== */
+.table-container {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+/* ===== Table ===== */
+.table-modern {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #2c6e49;
+}
+
+.table-modern th {
+  background: linear-gradient(120deg, #c8f0d9, #a0e6b1);
+  color: #1b4d34;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.table-modern td {
+  background: #f0fff4;
+  border-radius: 12px;
+  padding: 12px 18px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.table-modern tbody tr:hover td {
+  transform: translateY(-3px) rotateX(0.5deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background: #e0f5dc;
+}
+
+.table-modern tbody tr:nth-child(even) td {
+  background: #e6fff0;
+}
+
+/* ===== Actions Column ===== */
+.actions-column {
+  min-width: 160px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 6px 12px;
+  margin: 0 3px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn i {
+  margin-right: 6px;
+  font-size: 1rem;
+}
+
+/* Edit */
+.btn-edit {
+  background: linear-gradient(135deg, #42a5f5, #90caf9);
+  color: white;
+}
+.btn-edit:hover {
+  transform: translateY(-4px) rotateX(2deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Validate */
+.btn-validate {
+  background: linear-gradient(135deg, #2e7d32, #81c784);
+  color: white;
+}
+.btn-validate:hover {
+  transform: translateY(-4px) rotateX(2deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Delete */
+.btn-delete {
+  background: linear-gradient(135deg, #d32f2f, #ef9a9a);
+  color: white;
+}
+.btn-delete:hover {
+  transform: translateY(-4px) rotateX(2deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* CV Button */
+.btn-cv {
+  background: linear-gradient(135deg, #00bfa6, #00e676);
+  color: white;
+}
+.btn-cv:hover {
+  background: linear-gradient(135deg, #00e5ff, #1de9b6);
+  transform: translateY(-4px) scale(1.07);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== User Photo ===== */
+.user-photo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #a0e6b1;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.user-photo:hover {
+  transform: scale(1.15) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 1024px) {
+  .table-modern {
+    min-width: 700px;
+  }
+}
+
+@media(max-width: 768px) {
+  .table-modern {
+    min-width: 600px;
+  }
+  .table-modern th, .table-modern td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media(max-width: 576px) {
+  .table-modern {
+    min-width: 500px;
+  }
+  .btn {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+}
+/* Styles for notification dropdown */
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-notifications {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.notif-item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}

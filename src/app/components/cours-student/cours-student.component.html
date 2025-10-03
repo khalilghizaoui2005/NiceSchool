@@ -1,0 +1,73 @@
+<div class="student-dashboard">
+  <h2 class="dashboard-title">📚 My Courses & Evaluations</h2>
+
+  <!-- Moyenne Card -->
+  <div class="moyenne-box">
+    <h3>🎯 My Average</h3>
+    <div class="moyenne-value">
+      {{ moyenne }}/20 
+      <span class="moyenne-emoji">
+        {{ moyenne >= 16 ? '🌟' : moyenne >= 10 ? '🙂' : '😢' }}
+      </span>
+    </div>
+
+    <div class="moyenne-progress">
+      <div 
+        class="moyenne-fill" 
+        [style.width.%]="(moyenne/20)*100"
+        [ngClass]="{
+          'low': moyenne < 10,
+          'medium': moyenne >= 10 && moyenne < 16,
+          'high': moyenne >= 16
+        }">
+      </div>
+    </div>
+  </div>
+
+  <!-- Courses Cards -->
+  <div class="cards-container">
+    <div class="course-card" *ngFor="let cours of coursTab">
+      <!-- Header -->
+      <div class="course-header">
+        <h3>{{cours.coursId.name}}</h3>
+        <span class="course-duration">⏳ {{cours.coursId.duration}}</span>
+      </div>
+
+      <!-- Description -->
+      <p class="course-desc">{{cours.coursId.description}}</p>
+
+      <!-- Info -->
+      <div class="course-info">
+        👨‍🏫 <strong>{{cours.teacherId.firstName}} {{cours.teacherId.lastName}}</strong><br>
+        🏫 <span>{{cours.classeId.name}}</span>
+      </div>
+
+      <!-- Evaluation -->
+      <div class="course-eval">
+        <span class="eval-label">💬 Evaluation:</span>
+        <p class="eval-text">{{cours.eval}}</p>
+      </div>
+
+      <!-- Note + Progress -->
+      <div class="course-progress">
+        <div class="progress-bar">
+          <div 
+            class="progress-fill" 
+            [style.width.%]="(cours.note/20)*100"
+            [ngClass]="{
+              'low': cours.note < 10,
+              'medium': cours.note >= 10 && cours.note < 16,
+              'high': cours.note >= 16
+            }">
+          </div>
+        </div>
+        <div class="note-display">
+          <span class="note-value">{{cours.note}}/20</span>
+          <span class="note-emoji">
+            {{ cours.note >= 16 ? '🌟' : cours.note >= 10 ? '🙂' : '😢' }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

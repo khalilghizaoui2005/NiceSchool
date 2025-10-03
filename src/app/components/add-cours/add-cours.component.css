@@ -1,0 +1,128 @@
+/* ===== General Styles ===== */
+
+/* Container النموذج */
+form.bg-white {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+/* Shadow للنموذج */
+form.shadow {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* عنوان الصفحة */
+.page-title {
+  padding: 60px 0;
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Breadcrumbs */
+.breadcrumbs ol {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+}
+
+.breadcrumbs ol li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.breadcrumbs ol li.current {
+  font-weight: bold;
+}
+
+/* ===== Inputs, Textarea & Select ===== */
+
+/* أيقونات داخل الحقول */
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  font-size: 1.1rem;
+}
+
+/* Padding للـ input عند وجود أيقونة */
+.with-icon {
+  padding-left: 35px;
+}
+
+/* Textarea بنفس نمط الـ input */
+textarea.with-icon {
+  padding-left: 35px;
+  resize: none;
+}
+
+/* Select مع أيقونة */
+select.with-icon {
+  padding-left: 35px;
+  appearance: none; /* إزالة الأسهم الافتراضية */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="gray"><polygon points="0,0 12,0 6,6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+select.with-icon::-ms-expand {
+  display: none; /* لإخفاء السهم في IE */
+}
+
+/* تحسين الحقول عند التركيز */
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-control:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
+}
+
+/* ===== Buttons ===== */
+
+/* زر Add Course متدرج */
+.btn-success {
+  background: linear-gradient(45deg, #007bff, #00c851);
+  border: none;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.btn-success:hover {
+  background: linear-gradient(45deg, #00c851, #007bff);
+  transform: scale(1.05);
+}
+
+/* ===== Error Messages ===== */
+.text-danger {
+  font-size: 0.85rem;
+  margin-top: 3px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 576px) {
+  .with-icon {
+    padding-left: 30px;
+  }
+  .input-icon {
+    left: 8px;
+    font-size: 1rem;
+  }
+}

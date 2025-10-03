@@ -1,0 +1,50 @@
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #2e7d32; /* أخضر أنيق */
+}
+
+input.form-control,
+select.form-control {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input.form-control:focus,
+select.form-control:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+  outline: none;
+}
+
+button.btn-success {
+  background: linear-gradient(45deg, #43a047, #66bb6a);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button.btn-success:hover {
+  background: linear-gradient(45deg, #388e3c, #4caf50);
+  transform: scale(1.03);
+}

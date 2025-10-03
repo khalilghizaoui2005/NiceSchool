@@ -1,0 +1,62 @@
+<app-banner title="Signup"></app-banner>
+
+<div class="container mt-4">
+    <form #signupAdminForm="ngForm" (ngSubmit)="onSubmit()" class="p-4 shadow rounded bg-white">
+        <h2 class="text-center mb-4" style="text-decoration: underline green;">Sign Up</h2>
+        <!-- First & Last Name -->
+        <div class="row g-3">
+            <!-- First Name -->
+            <div class="col-md-6 position-relative">
+                <i class="bi bi-person input-icon"></i>
+                <input type="text" placeholder="First Name" class="form-control with-icon" name="firstNameAd" [(ngModel)]="user.firstName">
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-md-6 position-relative">
+                <i class="bi bi-person input-icon"></i>
+                <input type="text" [(ngModel)]="user.lastName" placeholder="Last Name" name="lastNameAd" class="form-control with-icon">
+
+            </div>
+
+        </div>
+
+
+        <!-- Email -->
+        <div class="mt-3 position-relative">
+            <i class="bi bi-envelope input-icon"></i>
+            <input type="email" [(ngModel)]="user.email" placeholder="Email" class="form-control with-icon" name="emailAd">
+        </div>
+
+
+
+        <div class="mt-3 position-relative">
+            <i class="bi bi-telephone input-icon"></i>
+            <input type="tel" [(ngModel)]="user.tel" placeholder="Phone Number" class="form-control with-icon"name="telAd">
+        </div>
+
+
+
+        <!-- Password -->
+        <div class="mt-3 position-relative">
+            <i class="bi bi-lock input-icon"></i>
+            <input type="password" [(ngModel)]="user.pass" placeholder="Password" class="form-control with-icon" name="passwordAd">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Submit -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-signup">
+                <i class="bi bi-person-plus"></i> Signup
+            </button>
+        </div>
+    </form>
+</div>

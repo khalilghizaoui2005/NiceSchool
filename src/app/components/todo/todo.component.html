@@ -1,0 +1,21 @@
+<div class="todo-wrapper">
+  <h1 class="title">🎇 Interactive To-Do List</h1>
+
+  <div class="input-container">
+    <input type="text" [(ngModel)]="newTask" placeholder="Add a new task..." class="task-input" />
+    <button class="btn-add" (click)="addTask()">Add</button>
+  </div>
+
+  <div class="tasks-grid">
+    <div class="task-card" *ngFor="let task of tasks" [@cardAnimation]>
+      <div class="task-content">
+        <span [class.completed]="task.completed">{{ task.title }}</span>
+        <span class="task-time">⏰ {{ task.createdAt | date:'short' }}</span>
+      </div>
+      <div class="task-buttons">
+        <button class="btn-done" (click)="toggleTask(task)">✓</button>
+        <button class="btn-delete" (click)="deleteTask(task)">🗑</button>
+      </div>
+    </div>
+  </div>
+</div>

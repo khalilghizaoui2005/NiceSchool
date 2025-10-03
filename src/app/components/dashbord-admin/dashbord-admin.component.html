@@ -1,0 +1,89 @@
+<app-banner title="✨ Dashboard" subtitle="Manage Users"></app-banner>
+
+<main class="main">
+    <section id="dashboard-section" class="section py-5">
+        <div class="container">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs justify-content-center custom-tabs mb-4" id="dashboardTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="users-tab" data-bs-toggle="tab" data-bs-target="#users"
+                        type="button" role="tab">Students</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="teacher-tab" data-bs-toggle="tab" data-bs-target="#teacher"
+                        type="button" role="tab">Teacher</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses"
+                        type="button" role="tab">Courses</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="classe-tab" data-bs-toggle="tab" data-bs-target="#classe" type="button"
+                        role="tab">Classe</button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="dashboardTabsContent" style="width: 100%;">
+                <!-- Users Tab -->
+                <div class="tab-pane fade show active" id="users" role="tabpanel" style="width: 100%;">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-12 mx-auto"> <!-- كامل العرض -->
+                            <div class="card shadow-modern" style="max-width: 100%; margin: auto;">
+                                <div class="card-header">Students</div>
+                                <div class="table-container">
+                                    <app-students-list></app-students-list>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Teacher Tab -->
+                <div class="tab-pane fade show" id="teacher" role="tabpanel" style="width: 100%;">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-12 mx-auto"> <!-- كامل العرض -->
+                            <div class="card shadow-modern" style="max-width: 100%; margin: auto;">
+                                <div class="card-header">Teacher</div>
+                                <div class="table-container">
+                                    <app-teacher-list></app-teacher-list>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Courses Tab -->
+                <div class="tab-pane fade show" id="courses" role="tabpanel" style="width: 100%;">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-12 mx-auto"> <!-- كامل العرض -->
+                            <div class="card shadow-modern" style="max-width: 100%; margin: auto;">
+                                <div class="card-header">Courses</div>
+                                <div class="table-container">
+                                    <app-cours-table></app-cours-table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Classe Tab -->
+                <div class="tab-pane fade show" id="classe" role="tabpanel" style="width: 100%;">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-12 mx-auto"> <!-- كامل العرض -->
+                            <div class="card shadow-modern" style="max-width: 100%; margin: auto;">
+                                <div class="card-header">Classe</div>
+                                <div class="table-container">
+                                    <app-classe-table></app-classe-table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- tab-content -->
+        </div>
+    </section>
+</main>

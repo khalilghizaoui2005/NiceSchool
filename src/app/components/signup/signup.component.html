@@ -1,0 +1,144 @@
+<app-banner title="Signup"></app-banner>
+
+<div class="container mt-4">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="p-4 shadow rounded bg-white">
+    <h2 class="text-center mb-4" style="text-decoration: underline green;">Sign Up</h2>
+
+    <!-- First & Last Name -->
+    <div class="row g-3">
+      <!-- First Name -->
+      <div class="col-md-6 position-relative">
+        <i class="bi bi-person input-icon"></i>
+        <input type="text" formControlName="firstName" placeholder="First Name" class="form-control with-icon">
+        <small class="text-danger"
+          *ngIf="signupForm.controls['firstName'].touched && signupForm.controls['firstName'].invalid">
+          <i class="bi bi-exclamation-circle"></i>
+          <span *ngIf="signupForm.controls['firstName'].errors?.['required']">First name is required</span>
+          <span *ngIf="signupForm.controls['firstName'].errors?.['minlength']">Minimum 3 characters</span>
+        </small>
+      </div>
+
+      <!-- Last Name -->
+      <div class="col-md-6 position-relative">
+        <i class="bi bi-person input-icon"></i>
+        <input type="text" formControlName="lastName" placeholder="Last Name" class="form-control with-icon">
+        <small class="text-danger"
+          *ngIf="signupForm.controls['lastName'].touched && signupForm.controls['lastName'].invalid">
+          <i class="bi bi-exclamation-circle"></i>
+          <span *ngIf="signupForm.controls['lastName'].errors?.['required']">Last name is required</span>
+          <span *ngIf="signupForm.controls['lastName'].errors?.['minlength']">Minimum 3 characters</span>
+        </small>
+      </div>
+
+    </div>
+
+ <!-- Email -->
+<!-- Email -->
+<div class="mt-3 position-relative">
+  <i class="bi bi-envelope input-icon"></i>
+  <input type="email" formControlName="email" placeholder="Email" class="form-control with-icon">
+  <small class="text-danger" *ngIf="signupForm.controls['email'].touched && signupForm.controls['email'].invalid">
+    <i class="bi bi-exclamation-circle"></i>
+    <span *ngIf="signupForm.controls['email'].errors?.['required']">Email is required</span>
+    <span *ngIf="signupForm.controls['email'].errors?.['email']">Invalid email</span>
+    <span *ngIf="signupForm.controls['email'].errors?.['emailExist']">Email already exists</span>
+  </small>
+</div>
+
+
+
+    <div class="mt-3 position-relative">
+      <i class="bi bi-telephone input-icon"></i>
+      <input type="tel" formControlName="tel" placeholder="Phone Number" class="form-control with-icon">
+      <small class="text-danger" *ngIf="signupForm.controls['tel'].touched && signupForm.controls['tel'].invalid">
+        <i class="bi bi-exclamation-circle"></i>
+        <span *ngIf="signupForm.controls['tel'].errors?.['required']">Phone is required</span>
+        <span *ngIf="signupForm.controls['tel'].errors?.['pattern']">Phone must be 8 digits</span>
+        <span *ngIf="signupForm.controls['tel'].errors?.['telNotFound']">This phone does not exist</span>
+      </small>
+    </div>
+
+
+    <!-- Address -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-geo-alt input-icon"></i>
+      <input type="text" formControlName="address" placeholder="Address" class="form-control with-icon">
+      <small class="text-danger"
+        *ngIf="signupForm.controls['address'].invalid && signupForm.controls['address'].touched">
+        <i class="bi bi-exclamation-circle"></i> Address is required
+      </small>
+    </div>
+
+    <!-- Password -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-lock input-icon"></i>
+      <input type="password" formControlName="password" placeholder="Password" class="form-control with-icon">
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-lock input-icon"></i>
+      <input type="password" formControlName="cnfPass" placeholder="Confirm Password" class="form-control with-icon">
+      <small class="text-danger"
+        *ngIf="signupForm.controls['cnfPass'].invalid && signupForm.controls['cnfPass'].touched">
+        <i class="bi bi-exclamation-circle"></i> Passwords must match
+      </small>
+    </div>
+
+    <!-- Upload Photo -->
+    <div class="text-center mt-3" *ngIf="userRole=='student'">
+      <img *ngIf="selectedImg" [src]="selectedImg" class="rounded-circle mb-2 shadow border border-3 border-success"
+        width="100" height="100">
+      <input type="file" #filePicker hidden (change)="onImgSelected($event)">
+      <button type="button" class="btn btn-outline-success" (click)="filePicker.click()">
+        <i class="bi bi-upload"></i> Upload Photo
+      </button>
+      <div class="text-center mt-1 text-danger" *ngIf="imgError">
+        <i class="bi bi-exclamation-circle"></i> {{ imgError }}
+      </div>
+    </div>
+    <!-- Specialite -->
+    <div class="mt-3 position-relative" *ngIf="userRole=='teacher'">
+      <select id="speciality" formControlName="speciality" class="form-control" required>
+        <option value="" disabled selected>Choisissez une spécialité</option>
+        <option value="math">Mathématiques</option>
+        <option value="informatique">Informatique</option>
+        <option value="physique">Physique</option>
+        <option value="francais">Français</option>
+      </select>
+    </div>
+
+    <!-- Upload CV (Teacher Only) -->
+    <div class="mt-3 text-center" *ngIf="userRole=='teacher'">
+      <input type="file" #cvPicker hidden accept=".pdf" (change)="onCvSelected($event)">
+      <button type="button" class="btn btn-outline-primary" (click)="cvPicker.click()">
+        <i class="bi bi-upload"></i> Upload CV (PDF)
+      </button>
+
+      <!-- اسم الملف -->
+      <div class="mt-2 text-success" *ngIf="selectedCv">
+        <i class="bi bi-file-earmark-pdf"></i> {{ selectedCv }}
+      </div>
+
+      <!-- رسالة خطأ -->
+      <div class="mt-2 text-danger" *ngIf="cvError">
+        <i class="bi bi-exclamation-circle"></i> {{ cvError }}
+      </div>
+    </div>
+
+
+
+
+    <!-- Progress Bar -->
+    <div class="progress mb-4" style="height: 8px; margin-top: 10px;">
+      <div class="progress-bar bg-success" role="progressbar" [style.width.%]="progress"></div>
+    </div>
+
+    <!-- Submit -->
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-signup">
+        <i class="bi bi-person-plus"></i> Signup
+      </button>
+    </div>
+  </form>
+</div>

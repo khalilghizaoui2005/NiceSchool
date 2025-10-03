@@ -1,0 +1,41 @@
+<div class="table-container">
+  <table class="table table-hover table-modern">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Photo/Cv</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Tel</th>
+        <th>Address</th>
+        <th>Role</th>
+        <th>Valide</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersTab">
+        <td>{{user._id}}</td>
+        <td>
+          <img *ngIf="user.role=='student'" [src]="'http://localhost:3000/images/' + user.photo" class="user-photo" alt="user photo">
+          <button *ngIf="user.role=='teacher'" class="btn btn-cv" (click)="viewCv(user.cv)">
+            <i class="fas fa-id-card"></i> View CV
+          </button>
+        </td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.tel}}</td>
+        <td>{{user.adr}}</td>
+        <td>{{user.role}}</td>
+        <td><span style="color:red; font-weight: bold;" *ngIf="user.valide=='non valide'">{{user.valide}}</span><span style="color:green; font-weight: bold;" *ngIf="user.valide=='valide'">{{user.valide}}</span></td>
+        <td class="actions-column">
+          <button *ngIf="user.role=='teacher'" class="btn btn-validate" (click)="valideTeacher(user._id)"><i class="bi bi-check2-circle"></i></button>
+          <button class="btn btn-edit" (click)="goToEdit(user._id)"><i class="bi bi-pencil-fill"></i></button>
+          <button class="btn btn-delete"><i class="bi bi-trash-fill"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

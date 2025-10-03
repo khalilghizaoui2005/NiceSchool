@@ -1,0 +1,68 @@
+<app-banner title="Edit User"></app-banner>
+
+<div class="container mt-4">
+  <form #editUserForm="ngForm" (ngSubmit)="editUser()" class="p-4 shadow rounded bg-white">
+    <h2 class="text-center mb-4" style="text-decoration: underline green;">Edit</h2>
+    <!-- First & Last Name -->
+    <div class="row g-3">
+      <!-- First Name -->
+      <div class="col-md-6 position-relative">
+        <i class="bi bi-person input-icon"></i>
+        <input type="text" placeholder={{user.firstName}} class="form-control with-icon" name="firstNameEdit" [(ngModel)]="user.firstName">
+      </div>
+
+      <!-- Last Name -->
+      <div class="col-md-6 position-relative">
+        <i class="bi bi-person input-icon"></i>
+        <input type="text" placeholder={{user.lastName}} class="form-control with-icon" name="lastNameEdit" [(ngModel)]="user.lastName">
+      </div>
+
+    </div>
+
+<!-- Email -->
+<div class="mt-3 position-relative">
+  <i class="bi bi-envelope input-icon"></i>
+  <input type="email" placeholder={{user.email}} class="form-control with-icon" name="emailEdit" [(ngModel)]="user.email">
+</div>
+
+
+
+    <div class="mt-3 position-relative">
+      <i class="bi bi-telephone input-icon"></i>
+      <input type="tel" name="telEdit" [(ngModel)]="user.tel" placeholder={{user.tel}} class="form-control with-icon">
+    </div>
+
+
+    <!-- Address -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-geo-alt input-icon"></i>
+      <input type="text" name="adrEdit" [(ngModel)]="user.adr" placeholder={{user.adr}} class="form-control with-icon">
+    </div>
+
+    <!-- Password -->
+    <div class="mt-3 position-relative">
+      <i class="bi bi-lock input-icon"></i>
+      <input type="password" name="passEdit" [(ngModel)]="user.pass" placeholder={{user.pass}} class="form-control with-icon">
+    </div>
+
+    <!-- Specialite -->
+    <div class="mt-3 position-relative" *ngIf="user.role=='teacher'">
+      <select id="speciality" name="specEdit" [(ngModel)]="user.spec" class="form-control">
+        <option value="" disabled selected>Choisissez une spécialité</option>
+        <option value="math">Mathématiques</option>
+        <option value="informatique">Informatique</option>
+        <option value="physique">Physique</option>
+        <option value="francais">Français</option>
+      </select>
+    </div>
+
+
+<span style="color: red;">{{errorMsg}}</span>
+    <!-- Submit -->
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-signup">
+        <i class="bi bi-person-plus"></i> Edit
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<app-banner title="add Task"></app-banner>
+<div class="card">
+    <h3>➕ Add Task</h3>
+
+    <input type="text" [(ngModel)]="task.title" placeholder="Task title" class="form-control">
+
+    <select [(ngModel)]="task.status" class="form-control">
+        <option value="todo">To Do</option>
+        <option value="in-progress">In Progress</option>
+        <option value="done">Done</option>
+    </select>
+
+    <button class="btn-success" (click)="addTask()">Add</button>
+</div>

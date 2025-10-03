@@ -1,0 +1,290 @@
+/* البطاقة */
+.card.shadow-modern {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+  background: #f9fff7;
+  position: relative;
+  width: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card.shadow-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ترويسة البطاقة */
+.card-header {
+  background: linear-gradient(135deg, #2c6e49, #88c999);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  padding: 18px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  border-bottom: 4px solid #2c6e49;
+  border-radius: 12px 12px 0 0;
+}
+
+/* حاوية الجدول */
+.table-container {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* الجدول */
+.table-modern {
+  width: 100%;
+  min-width: 700px;
+  /* جدول أكبر قليلًا */
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #2c6e49;
+}
+
+/* رؤوس الأعمدة */
+.table-modern th {
+  background: linear-gradient(120deg, #c8f0d9, #a0e6b1);
+  color: #1b4d34;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* خلايا الجدول */
+.table-modern td {
+  background: #f0fff4;
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Hover على الصفوف */
+.table-modern tbody tr:hover td {
+  transform: translateY(-2px) rotateX(0.3deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #e0f5dc;
+}
+
+/* تمييز الصفوف بالتناوب */
+.table-modern tbody tr:nth-child(even) td {
+  background: #e6fff0;
+}
+
+/* عمود الأزرار */
+.actions-column {
+  min-width: 200px;
+  /* مساحة كافية للأزرار بجانب بعض */
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* الأزرار */
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 6px 12px;
+  margin: 0 3px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* أيقونات داخل الأزرار */
+.btn i {
+  margin-right: 6px;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+/* زر Edit */
+.btn-edit {
+  background: linear-gradient(135deg, #42a5f5, #90caf9);
+  color: white;
+}
+
+.btn-edit:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* زر Validate */
+.btn-validate {
+  background: linear-gradient(135deg, #2e7d32, #81c784);
+  color: white;
+}
+
+.btn-validate:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* زر Delete */
+.btn-delete {
+  background: linear-gradient(135deg, #d32f2f, #ef9a9a);
+  color: white;
+}
+
+.btn-delete:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* زر CV */
+.btn-cv {
+  background: linear-gradient(135deg, #00bfa6, #00e676);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 14px;
+  margin: 0 3px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-cv i {
+  margin-right: 6px;
+}
+
+.btn-cv:hover {
+  background: linear-gradient(135deg, #00e5ff, #1de9b6);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* صورة المستخدم */
+.user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #a0e6b1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.user-photo:hover {
+  transform: scale(1.15) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* زر قسم - اللون السابق (تركواز → أزرق فاتح) */
+.btn-classe-small {
+  background: linear-gradient(135deg, #00bfa6, #00e5ff);
+  /* تركواز → أزرق فاتح */
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 191, 166, 0.3);
+  font-family: 'Poppins', 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.btn-classe-small i {
+  font-size: 1rem;
+}
+
+.btn-classe-small:hover {
+  transform: translateY(-3px) scale(1.07);
+  background: linear-gradient(135deg, #00e676, #1de9b6);
+  /* أخضر زمردي → تركواز فاتح */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-classe-small:active {
+  transform: scale(0.94);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+
+  .table-modern th,
+  .table-modern td {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+}
+
+@media(max-width: 576px) {
+
+  .table-modern th,
+  .table-modern td {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+}
+
+/* زر قائمة الطلاب */
+.btn-student-small {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  /* بنفسجي → أزرق */
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+  font-family: 'Poppins', 'Inter', sans-serif;
+  letter-spacing: 0.4px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* أيقونة داخل الزر */
+.btn-student-small i {
+  font-size: 1rem;
+}
+
+/* Hover */
+.btn-student-small:hover {
+  transform: translateY(-3px) scale(1.08);
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  /* بنفسجي غني */
+  box-shadow: 0 6px 22px rgba(74, 0, 224, 0.35);
+}
+
+/* Active */
+.btn-student-small:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}

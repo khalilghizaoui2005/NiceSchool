@@ -1,0 +1,49 @@
+<app-banner *ngIf="!isCours" title="cours"></app-banner>
+
+<table class="table table-hover table-modern">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th *ngIf="isTeacher">Teacher Id</th>
+            <th *ngIf="isTeacher">Teacher Name</th>
+            <th>Classe List</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cours of coursTab">
+            <td>{{cours._id}}</td>
+            <td>{{cours.name}}</td>
+            <td>{{cours.description}}</td>
+            <td>{{cours.duration}}</td>
+            <td *ngIf="isTeacher">{{cours.teacher._id}}</td>
+            <td *ngIf="isTeacher">{{cours.teacher.firstName}} {{cours.teacher.lastName}}</td>
+            <td *ngIf="isStudents==false">
+                <button class="btn-classe-small" (click)="goToClasseList(cours.classeCoursId)">
+                    <i class="fas fa-school"></i>
+                    Classe List </button>
+            </td>
+            <td *ngIf="isStudents">
+                <button *ngIf="cours.classeCoursId" class="btn-classe-small"
+                    (click)="goToClasseListT(cours.classeCoursId._id || cours.classeCoursId, cours._id)">
+                    <i class="fas fa-school"></i>
+                    Classe List
+                </button>
+
+            </td>
+
+            <td class="text-center actions-column">
+                <button class="btn btn-edit" title="Edit" (click)="goToEditCours(cours._id)">
+                    <i class="bi bi-pencil-fill"></i> <!-- Bootstrap Icon -->
+                </button>
+                <button class="btn btn-delete" title="Delete" (click)="deleteCours(cours._id)">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

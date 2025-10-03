@@ -1,0 +1,52 @@
+/* ===== Form Container ===== */
+form.bg-white {
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 35px;
+  border-radius: 20px;
+  background-color: #f9fefb;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+.page-title {
+  padding: 70px 0;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(120deg, #28a745, #85d19c);
+}
+.page-title h1 { font-size: 2.7rem; font-weight: 700; }
+.breadcrumbs ol { display:flex; justify-content:center; gap:8px; padding:0; list-style:none; color:#e8f5e9; font-weight:500;}
+.breadcrumbs ol li a { color:#e8f5e9; text-decoration:none; }
+.breadcrumbs ol li.current { font-weight:700; }
+
+/* ===== Inputs & Select ===== */
+.input-icon { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:#28a745; font-size:1.2rem; }
+.with-icon { padding-left:40px; border-radius:12px; border:1px solid #c3e6cb; transition:0.3s; }
+.with-icon:focus { border-color:#28a745; box-shadow:0 0 8px rgba(40,167,69,0.3); }
+textarea.with-icon { padding-left:40px; resize:none; }
+select.with-icon { padding-left:40px; border-radius:12px; border:1px solid #c3e6cb; appearance:none; background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%2328a745"><polygon points="0,0 12,0 6,6"/></svg>'); background-repeat:no-repeat; background-position:right 12px center; background-size:12px; }
+select.with-icon::-ms-expand { display:none; }
+
+/* ===== Buttons ===== */
+.btn-success { background: linear-gradient(45deg, #007bff, #00c851); border:none; color:#fff; padding:12px 35px; border-radius:50px; transition:0.3s; font-weight:600; letter-spacing:0.5px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+.btn-success:hover { background: linear-gradient(45deg, #00c851, #007bff); transform: scale(1.05); box-shadow:0 6px 18px rgba(0,0,0,0.15); }
+
+/* ===== Multi-Select Modern ===== */
+.multi-select-container { position:relative; border:1px solid #c3e6cb; border-radius:12px; background:#f9fefb; cursor:pointer; transition:0.3s; }
+.multi-select-container:hover { border-color:#28a745; box-shadow:0 0 12px rgba(40,167,69,0.2); }
+.selected-items { padding:10px 15px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; min-height:45px; font-size:0.95rem; }
+.selected-items span { background:#28a745; color:#fff; padding:5px 10px; border-radius:15px; font-size:0.9rem; }
+.dropdown-icon { margin-left:auto; font-size:1.3rem; color:#28a745; }
+.dropdown-list { position:absolute; width:100%; max-height:260px; overflow-y:auto; border:1px solid #c3e6cb; border-radius:12px; background:#fff; z-index:10; padding:8px; margin-top:3px; box-shadow:0 6px 18px rgba(0,0,0,0.15);}
+.dropdown-item { display:flex; align-items:center; padding:8px 10px; border-radius:8px; transition:0.2s; }
+.dropdown-item:hover { background-color:#e6f4ea; }
+.search-box { width:100%; margin-bottom:5px; padding:6px 10px; border-radius:8px; border:1px solid #c3e6cb; }
+
+/* ===== Error Messages ===== */
+.text-danger { font-size:0.85rem; margin-top:4px; display:block; }
+
+/* ===== Scrollbar Custom ===== */
+.dropdown-list::-webkit-scrollbar { width:6px; }
+.dropdown-list::-webkit-scrollbar-thumb { background-color:#28a745; border-radius:3px; }
+
+/* ===== Responsive ===== */
+@media (max-width:576px) { .with-icon { padding-left:35px; } .input-icon { left:10px; font-size:1.1rem; } .selected-items { min-height:42px; } }
