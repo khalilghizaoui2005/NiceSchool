@@ -1,6 +1,6 @@
-<header id="header" class="header fixed-top">
-  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
+<header class="header fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    
     <!-- Logo -->
     <a routerLink="/" class="logo d-flex align-items-center">
       <i class="bi bi-buildings logo-icon"></i>
@@ -8,35 +8,27 @@
     </a>
 
     <!-- Navigation -->
-    <nav id="navmenu" class="navmenu d-flex align-items-center">
-
-      <!-- Hamburger للهاتف -->
-<i class="mobile-nav-toggle d-xl-none bi bi-list" (click)="toggleMobileMenu()"></i>
-
-      <ul [class.mobile-open]="mobileMenuOpen" class="d-flex align-items-center mb-0">
-        <li><a routerLink="" routerLinkActive="active" *ngIf="isParent">Home</a></li>
-        <li><a routerLink="dashbordStudent" routerLinkActive="active" *ngIf="isStudent">Dashboard Student</a></li>
-        <li><a routerLink="dashbordTeacher" routerLinkActive="active" *ngIf="isTeacher">Dashboard Teacher</a></li>
-        <li><a routerLink="dashbordAdmin" routerLinkActive="active" *ngIf="isAdmin">Dashboard Admin</a></li>
-        <li><a routerLink="addCours" *ngIf="isAdmin">Add Cours</a></li>
-        <li><a routerLink="addClasse" *ngIf="isAdmin">Add Classe</a></li>
-        <li><a routerLink="signupStudent" *ngIf="isNotCon">Signup</a></li>
-        <li><a routerLink="login" *ngIf="isNotCon">Login</a></li>
-
-        <!-- User Info -->
+    <nav class="navmenu">
+      <ul [class.show]="mobileMenuOpen">
+        <li *ngIf="isParent"><a routerLink="">Home</a></li>
+        <li *ngIf="isStudent"><a routerLink="dashbordStudent">Dashboard Student</a></li>
+        <li *ngIf="isTeacher"><a routerLink="dashbordTeacher">Dashboard Teacher</a></li>
+        <li *ngIf="isAdmin"><a routerLink="dashbordAdmin">Dashboard Admin</a></li>
+        <li *ngIf="isAdmin"><a routerLink="addCours">Add Cours</a></li>
+        <li *ngIf="isAdmin"><a routerLink="addClasse">Add Classe</a></li>
+        <li *ngIf="isNotCon"><a routerLink="signupStudent">Signup</a></li>
+        <li *ngIf="isNotCon"><a routerLink="login">Login</a></li>
         <li *ngIf="!isNotCon">
           <a (click)="goToEdit()">
-            <span *ngIf="user.role=='student'">
-              <img [src]="'http://localhost:3000/images/' + user.photo" alt="User photo" class="user-photo">
-            </span>
-            HI ! {{user.fName}} {{user.lName}}
+            <img *ngIf="user.role=='student'" [src]="'http://localhost:3000/images/' + user.photo" class="user-photo">
+            Hi! {{user.fName}} {{user.lName}}
           </a>
         </li>
-        <li *ngIf="!isNotCon">
-          <a (click)="logout()" class="logout-btn">LogOut</a>
-        </li>
+        <li *ngIf="!isNotCon"><a (click)="logout()" class="logout-btn">Logout</a></li>
       </ul>
-    </nav>
 
+      <!-- Mobile toggle -->
+      <i class="mobile-nav-toggle bi bi-list" (click)="toggleMobileMenu()"></i>
+    </nav>
   </div>
 </header>

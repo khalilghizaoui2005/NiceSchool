@@ -13,64 +13,45 @@ export class HeaderComponent implements OnInit {
   isTeacher = false;
   isParent = false;
   isAdmin = false;
-  isNotCon = true;
+  isNotCon = false;
   user: any = {};
-  notifications: any[] = [];
-  showNotifications = false;
-  mobileMenuOpen = false; // <--- القائمة للهاتف
+  mobileMenuOpen = false;
 
-  constructor(private router: Router, private nService: NotificationService) {}
+  constructor(private router: Router, private nService: NotificationService) { }
 
   ngOnInit(): void {
     this.loadUser();
-
-    // إعادة تحميل بيانات المستخدم عند تغيير المسار
     this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.loadUser();
-      }
+      if(event instanceof NavigationEnd) this.loadUser();
     });
   }
 
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
   loadUser() {
-    const token = sessionStorage.getItem('token');
-    if (token) {
+    const token = sessionStorage.getItem("token");
+    if(token){
       const decoded: any = jwtDecode(token);
       this.user = decoded;
-
-      this.isStudent = decoded.role === 'student';
-      this.isTeacher = decoded.role === 'teacher';
-      this.isParent = decoded.role === 'parent';
-      this.isAdmin = decoded.role === 'admin';
+      this.isStudent = decoded.role==="student";
+      this.isTeacher = decoded.role==="teacher";
+      this.isParent = decoded.role==="parent";
+      this.isAdmin = decoded.role==="admin";
       this.isNotCon = false;
-
-      // تحميل الإشعارات
-      this.nService.getNotifications(decoded.role).subscribe(
-        (res: any) => this.notifications = res,
-        err => console.error(err)
-      );
     } else {
       this.isStudent = this.isTeacher = this.isParent = this.isAdmin = false;
       this.isNotCon = true;
-      this.notifications = [];
     }
   }
 
-  toggleNotifications() {
-    this.showNotifications = !this.showNotifications;
-  }
-
- toggleMobileMenu() {
-  const nav = document.querySelector('.navmenu ul') as HTMLElement;
-  nav.classList.toggle('show'); // تحتاج CSS .show لعرض القائمة
-}
-
   logout() {
     sessionStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigate(["login"]);
   }
 
   goToEdit() {
-    this.router.navigate(['/editUser/' + this.user.id]);
+    this.router.navigate(["/editUser/"+this.user.id]);
   }
 }
