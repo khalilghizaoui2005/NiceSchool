@@ -60,9 +60,10 @@ export class HeaderComponent implements OnInit {
     this.showNotifications = !this.showNotifications;
   }
 
-  toggleMobileMenu() {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
-  }
+ toggleMobileMenu() {
+  const nav = document.querySelector('.navmenu ul') as HTMLElement;
+  nav.classList.toggle('show'); // تحتاج CSS .show لعرض القائمة
+}
 
   logout() {
     sessionStorage.clear();
