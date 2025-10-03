@@ -9,7 +9,11 @@
 
     <!-- Navigation -->
     <nav id="navmenu" class="navmenu d-flex align-items-center">
-      <ul class="d-flex align-items-center mb-0">
+
+      <!-- Hamburger للهاتف -->
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" (click)="toggleMobileMenu()"></i>
+
+      <ul [class.mobile-open]="mobileMenuOpen" class="d-flex align-items-center mb-0">
         <li><a routerLink="" routerLinkActive="active" *ngIf="isParent">Home</a></li>
         <li><a routerLink="dashbordStudent" routerLinkActive="active" *ngIf="isStudent">Dashboard Student</a></li>
         <li><a routerLink="dashbordTeacher" routerLinkActive="active" *ngIf="isTeacher">Dashboard Teacher</a></li>
@@ -18,22 +22,20 @@
         <li><a routerLink="addClasse" *ngIf="isAdmin">Add Classe</a></li>
         <li><a routerLink="signupStudent" *ngIf="isNotCon">Signup</a></li>
         <li><a routerLink="login" *ngIf="isNotCon">Login</a></li>
-        <!-- N -->  
 
-
-
-
-
-        <li><a (click)="goToEdit()" *ngIf="!isNotCon">
+        <!-- User Info -->
+        <li *ngIf="!isNotCon">
+          <a (click)="goToEdit()">
             <span *ngIf="user.role=='student'">
-              <img [src]="'http://localhost:3000/images/' + user.photo" alt="User photo"
-                class="user-photo rounded-circle">
+              <img [src]="'http://localhost:3000/images/' + user.photo" alt="User photo" class="user-photo">
             </span>
             HI ! {{user.fName}} {{user.lName}}
-          </a></li>
-        <li><a (click)="logout()" class="logout-btn" *ngIf="!isNotCon">LogOut</a></li>
+          </a>
+        </li>
+        <li *ngIf="!isNotCon">
+          <a (click)="logout()" class="logout-btn">LogOut</a>
+        </li>
       </ul>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
   </div>
