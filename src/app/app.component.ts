@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 import { Component, AfterViewInit } from '@angular/core';
-=======
-import { Component } from '@angular/core';
->>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-<<<<<<< HEAD
 export class AppComponent implements AfterViewInit {
+  title = 'ecole'; // ضع اسم مشروعك الصحيح هنا
 
   ngAfterViewInit(): void {
     // إخفاء spinner بعد تحميل Angular
@@ -19,11 +15,4 @@ export class AppComponent implements AfterViewInit {
       preloader.style.display = 'none';
     }
   }
-
 }
-=======
-export class AppComponent {
-  title = 'todo-app';
-}
-
->>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c

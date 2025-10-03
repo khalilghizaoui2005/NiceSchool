@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -19,28 +17,12 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ]
+    "lib": ["es2020", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-=======
-{
-  "compilerOptions": {
-    "target": "es2017",          // أو es2020
-    "module": "esnext",
-    "lib": ["es2018", "dom"],    // مهم لإصلاح أغلب أخطاء "Cannot find name"
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true
->>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c
   }
 }

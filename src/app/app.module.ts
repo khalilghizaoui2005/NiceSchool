@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -40,22 +39,11 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
 import { TasksTableComponent } from './components/tasks-table/tasks-table.component';
 
 
-=======
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // ✅ هذا مفقود
 
-import { AppComponent } from './app.component';
-import { TodoComponent } from './components/todo/todo.component';
->>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     HeaderComponent,
     SignupComponent,
     FooterComponent,
@@ -95,17 +83,6 @@ import { TodoComponent } from './components/todo/todo.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
-=======
-    TodoComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot([]),
-    BrowserAnimationsModule // ✅ الآن صحيح
->>>>>>> 9f685caed91c7db03b6ec1cf424982bb65cd5b9c
   ],
   providers: [],
   bootstrap: [AppComponent]
